@@ -6,10 +6,6 @@ PaSparet is a Vite React TypeScript project with Tailwind CSS. This project is d
 
 - Installation
 - Usage
-- Features
-- Contributing
-- License
-- Contact
 
 ## Installation
 
