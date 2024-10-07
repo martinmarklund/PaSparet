@@ -1,0 +1,22 @@
+[
+  {
+    "clue": "Staden är känd som ursprunget för muralismrörelsen. En konströrelse som växte fram under 20-talet och består just av stora väggmålningar",
+    "images": ["image1.jpg", "image2.jpg"]
+  },
+  {
+    "clue": "Hela staden är byggd ovanpå en insjö, och har på senaste år fått problem med sättningar på grund av det. (se bilderna)",
+    "images": ["image3.jpg", "image4.jpg"]
+  },
+  {
+    "clue": "Det finns en kyrka i staden med ett rullband framför helgonet så att pilgrimer kan beskåda det utan att komma ivägen för varanda.",
+    "images": ["image5.jpg", "image6.jpg"]
+  },
+  {
+    "clue": "Alldeles i utkanten av staden finns två av världens största pyramiden.",
+    "images": ["image7.jpg", "image8.jpg"]
+  },
+  {
+    "clue": "Staden förkortas sedan 2018 officielt CDMX.",
+    "images": ["image9.jpg", "image10.jpg"]
+  }
+]

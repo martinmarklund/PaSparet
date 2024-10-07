@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  height: 400px;
+  object-fit: contain;
+}
