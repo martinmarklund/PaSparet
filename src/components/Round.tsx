@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import roundsData from "../assets/MexicoCity/data.json";
 import { image1, image2 } from "../assets/MexicoCity/images/round1";
@@ -33,7 +33,16 @@ const Game: React.FC = () => {
   const [isCorrectGuess, setIsCorrectGuess] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
 
+  // Pre-load images
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  });
+
   const answer = "Mexico City"; // Correct answer for this game.
+  const maxGuesses = 3;
 
   // Mapping rounds data to include image references TODO: Should be replaced when database has been added.
   const rounds = roundsData.map((round) => ({
@@ -54,8 +63,9 @@ const Game: React.FC = () => {
     setGuesses([...guesses, guess]);
     setIsCorrectGuess(isCorrect);
     setShowPopup(true);
-    if (isCorrect) {
-      setScore(score + (10 - guesses.length)); // Update score based on number of guesses TODO: Update to match Mange's formula
+    if (isCorrect && guesses.length <= maxGuesses) {
+      const score = (5 - currentRound) * (3 - guesses.length);
+      setScore(score); // Update score based on number of guesses TODO: Update to match Mange's formula
     }
     setGuess(""); // Clear the input after handling the guess
   };
@@ -65,6 +75,8 @@ const Game: React.FC = () => {
     setShowPopup(false);
     if (isCorrectGuess) {
       setShowSummary(true); // Show summary if the guess was correct
+    } else if (guesses.length > maxGuesses) {
+      setShowSummary(true); // Also show summary and end game if too many guesses have been made
     } else {
       setCurrentRound(currentRound + 1); // Move to the next round if the guess was incorrect
     }

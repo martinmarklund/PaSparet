@@ -5,7 +5,7 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Game from "./components/Game";
+import Game from "./pages/Game";
 
 import "./index.css";
 
